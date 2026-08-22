@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cataventos — Petiscos &amp; Companhia</title>
+  <meta name="description" content="Cataventos — Petiscos &amp; Companhia. Petisqueira portuguesa moderna: petiscos de partilha, vinho a copo e bom convívio. Reserve a sua mesa." />
+
+  <!-- ===== Google Fonts (display=swap) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CATA-VENTO — motivo de marca reutilizável (SVG inline).
+       Onde aparecer a classe .pinwheel, gira suavemente.
+       ============================================================ -->
+  <template id="pinwheel-template">
+    <svg class="pinwheel" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <g class="pinwheel__vanes">
+        <path class="blade blade--a" d="M50 50 L50 7 L88 24 Z" />
+        <path class="blade blade--b" d="M50 50 L93 50 L76 88 Z" />
+        <path class="blade blade--a" d="M50 50 L50 93 L12 76 Z" />
+        <path class="blade blade--b" d="M50 50 L7 50 L24 12 Z" />
+      </g>
+      <circle class="pinwheel__hub" cx="50" cy="50" r="6.5" />
+    </svg>
+  </template>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="brand" aria-label="Cataventos — início">
+        <span class="brand__mark" data-pinwheel></span>
+        <span class="brand__text">
+          <span class="brand__name">Cataventos</span>
+          <span class="brand__sub">Petiscos &amp; Companhia</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navegação principal">
+        <a href="#conceito">Conceito</a>
+        <a href="#petiscos">Petiscos</a>
+        <a href="#bebidas">Para Acompanhar</a>
+        <a href="#ambiente">Ambiente</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+
+      <a href="#reservas" class="btn btn--small btn--solid nav__cta">Reservar Mesa</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Menu móvel -->
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#conceito">Conceito</a>
+      <a href="#petiscos">Petiscos</a>
+      <a href="#bebidas">Para Acompanhar</a>
+      <a href="#ambiente">Ambiente</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#reservas" class="btn btn--solid">Reservar Mesa</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="hero">
+      <!-- Foto: mesa farta / ambiente de tasca à luz de velas — Unsplash (livre de direitos) -->
+      <img
+        class="hero__bg"
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1920"
+        alt="Mesa de restaurante posta com copos de vinho e pratos, à luz quente das velas"
+        fetchpriority="high"
+      />
+      <div class="hero__scrim"></div>
+
+      <div class="hero__content">
+        <span class="eyebrow eyebrow--light">Petisqueira · Lisboa</span>
+        <h1 class="hero__title">Petiscos para<br />partilhar<span class="amp"> &amp; </span>companhia<br />para ficar.</h1>
+        <p class="hero__lead">
+          Cozinha portuguesa de tasca, feita para o meio da mesa — pratos que se
+          espetam à vez, um copo que nunca fica vazio e conversa sem hora para acabar.
+        </p>
+        <div class="hero__cta">
+          <a href="#petiscos" class="btn btn--solid">Ver Petiscos</a>
+          <a href="#reservas" class="btn btn--ghost">Reservar Mesa</a>
+        </div>
+      </div>
+
+      <a href="#conceito" class="hero__scroll" aria-label="Descer">
+        <span data-pinwheel></span>
+      </a>
+    </section>
+
+    <!-- ======================= CONCEITO ======================= -->
+    <section class="section conceito" id="conceito">
+      <div class="conceito__grid">
+        <div class="conceito__text reveal">
+          <span class="eyebrow">O Conceito</span>
+          <h2 class="section__title">Aqui não se janta. <em>Petisca-se.</em></h2>
+          <p>
+            No Cataventos, a mesa é feita de pratos pequenos e vontades grandes.
+            Trazemos o petisco quando fica pronto, coloca-se ao centro e comemos
+            como se comia em casa dos avós — de garfo em riste, a disputar o último
+            naco e a molhar o pão no molho que sobra.
+          </p>
+          <p>
+            O <strong>&amp; Companhia</strong> não é acaso: só há boa mesa quando há
+            gente à volta dela. Sente-se, não tenha pressa e deixe o cata-vento
+            marcar o ritmo — devagar, ao sabor do vento.
+          </p>
+          <ul class="conceito__marks">
+            <li><span data-pinwheel></span> Cozinha de partilha</li>
+            <li><span data-pinwheel></span> Produto português</li>
+            <li><span data-pinwheel></span> Sem pressa nenhuma</li>
+          </ul>
+        </div>
+
+        <div class="conceito__media reveal">
+          <!-- Foto: amigos à mesa longa, a partilhar — Unsplash -->
+          <img
+            src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1000"
+            alt="Grupo de amigos reunidos a partilhar comida e bebida numa mesa comprida"
+            loading="lazy"
+          />
+          <div class="conceito__badge">
+            <span data-pinwheel></span>
+            <span>Ao sabor<br />do vento</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PETISCOS ======================= -->
+    <section class="section petiscos" id="petiscos">
+      <div class="section__head reveal">
+        <span class="eyebrow"><span data-pinwheel class="eyebrow__mark"></span> A Carta</span>
+        <h2 class="section__title">Os Nossos Petiscos</h2>
+        <p class="section__intro">
+          Uma escolha para pedir aos poucos e ir enchendo a mesa. Todos pensados
+          para dividir — mas ninguém está a contar.
+        </p>
+      </div>
+
+      <div class="petiscos__grid">
+
+        <!-- 1 — Pica-Pau (foto real, Unsplash) -->
+        <article class="petisco reveal">
+          <div class="petisco__img">
+            <img
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800"
+              alt="Nacos de carne grelhada com molho, servidos numa tábua"
+              loading="lazy"
+            />
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Pica-Pau</h3>
+              <span class="petisco__price">8,50&nbsp;€</span>
+            </div>
+            <p>Nacos de lombo salteados em manteiga de alho, vinho branco e um toque
+               de piripíri, com pickles caseiros e muito pão para o molho. Feito para
+               espetar à vez, entre dedos e conversa.</p>
+          </div>
+        </article>
+
+        <!-- 2 — Amêijoas à Bulhão Pato (PLACEHOLDER — sem foto livre fiel) -->
+        <article class="petisco reveal">
+          <!-- SUBSTITUIR pela foto real: amêijoas à Bulhão Pato -->
+          <div class="petisco__img petisco__img--placeholder" data-dish="Amêijoas à Bulhão Pato" role="img" aria-label="Placeholder — substituir pela fotografia real de amêijoas à Bulhão Pato">
+            <span class="ph-mark" data-pinwheel></span>
+            <span class="ph-note">Foto a caminho</span>
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Amêijoas à Bulhão Pato</h3>
+              <span class="petisco__price">12,00&nbsp;€</span>
+            </div>
+            <p>Abertas em azeite, muito alho, coentros frescos e um fio de vinho branco.
+               Uma das 7 Maravilhas à mesa — e molhar o pão no molho não é sugestão, é lei.</p>
+          </div>
+        </article>
+
+        <!-- 3 — Peixinhos da Horta (PLACEHOLDER) -->
+        <article class="petisco reveal">
+          <!-- SUBSTITUIR pela foto real: peixinhos da horta -->
+          <div class="petisco__img petisco__img--placeholder" data-dish="Peixinhos da Horta" role="img" aria-label="Placeholder — substituir pela fotografia real de peixinhos da horta">
+            <span class="ph-mark" data-pinwheel></span>
+            <span class="ph-note">Foto a caminho</span>
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Peixinhos da Horta</h3>
+              <span class="petisco__price">6,50&nbsp;€</span>
+            </div>
+            <p>Feijão-verde envolto em polme leve e frito na hora — estaladiço por fora,
+               tenro por dentro. O petisco que os portugueses levaram ao Japão e virou tempura.</p>
+          </div>
+        </article>
+
+        <!-- 4 — Moelas Guisadas (foto real, Unsplash) -->
+        <article class="petisco reveal">
+          <div class="petisco__img">
+            <img
+              src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?auto=format&fit=crop&q=80&w=800"
+              alt="Prato de guisado em molho de tomate polvilhado com queijo"
+              loading="lazy"
+            />
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Moelas Guisadas</h3>
+              <span class="petisco__price">7,00&nbsp;€</span>
+            </div>
+            <p>Estufadas em lume brando com tomate, louro e um copo de tinto, até ficarem
+               macias e o molho encorpado. Pedem pão rústico e não perdoam pressas.</p>
+          </div>
+        </article>
+
+        <!-- 5 — Pataniscas de Bacalhau (PLACEHOLDER) -->
+        <article class="petisco reveal">
+          <!-- SUBSTITUIR pela foto real: pataniscas de bacalhau -->
+          <div class="petisco__img petisco__img--placeholder" data-dish="Pataniscas de Bacalhau" role="img" aria-label="Placeholder — substituir pela fotografia real de pataniscas de bacalhau">
+            <span class="ph-mark" data-pinwheel></span>
+            <span class="ph-note">Foto a caminho</span>
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Pataniscas de Bacalhau</h3>
+              <span class="petisco__price">7,50&nbsp;€</span>
+            </div>
+            <p>Douradas de bacalhau desfiado, fofas no meio e crocantes nos bordos.
+               Boas sozinhas, melhores com companhia — aqui é mesmo para petiscar.</p>
+          </div>
+        </article>
+
+        <!-- 6 — Tábua de Queijos & Enchidos (foto real, Unsplash) -->
+        <article class="petisco reveal">
+          <div class="petisco__img">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800"
+              alt="Tábua de madeira com enchidos fatiados, tomate e pickles"
+              loading="lazy"
+            />
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Tábua de Queijos &amp; Enchidos</h3>
+              <span class="petisco__price">13,50&nbsp;€</span>
+            </div>
+            <p>Seleção de queijos curados e enchidos regionais — chouriço, presunto e paio —
+               com compota da casa, azeitonas e broa acabada de cortar. Para partilhar sem contas.</p>
+          </div>
+        </article>
+
+        <!-- 7 — Croquetes da Casa (PLACEHOLDER) -->
+        <article class="petisco reveal">
+          <!-- SUBSTITUIR pela foto real: croquetes da casa -->
+          <div class="petisco__img petisco__img--placeholder" data-dish="Croquetes da Casa" role="img" aria-label="Placeholder — substituir pela fotografia real de croquetes">
+            <span class="ph-mark" data-pinwheel></span>
+            <span class="ph-note">Foto a caminho</span>
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Croquetes da Casa</h3>
+              <span class="petisco__price">6,00&nbsp;€</span>
+            </div>
+            <p>De carne estufada, crocantes por fora e cremosos por dentro, com uma
+               pontinha de mostarda antiga. Desaparecem antes de chegarem ao meio da mesa.</p>
+          </div>
+        </article>
+
+        <!-- 8 — Picanha da Casa (foto real, Unsplash) -->
+        <article class="petisco reveal">
+          <div class="petisco__img">
+            <img
+              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=800"
+              alt="Bife grelhado fatiado com batata rústica a corar num prato"
+              loading="lazy"
+            />
+          </div>
+          <div class="petisco__body">
+            <div class="petisco__row">
+              <h3>Picanha da Casa</h3>
+              <span class="petisco__price">14,00&nbsp;€</span>
+            </div>
+            <p>Tiras de picanha grelhadas no ponto, flor de sal, alho dourado e batata
+               rústica a corar. Vai ao centro para dividir… se conseguires.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="petiscos__foot reveal">
+        Os preços são indicativos (placeholder). Temos sempre um <strong>petisco do dia</strong> —
+        pergunte à mesa. <span class="petiscos__foot-note">Informe-nos de alergénios.</span>
+      </p>
+    </section>
+
+    <!-- ======================= PARA ACOMPANHAR ======================= -->
+    <section class="section bebidas" id="bebidas">
+      <div class="bebidas__grid">
+        <div class="bebidas__media reveal">
+          <!-- Foto: brinde com copos de vinho tinto — Unsplash -->
+          <img
+            src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=1000"
+            alt="Amigos a brindar com copos de vinho tinto"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="bebidas__list reveal">
+          <span class="eyebrow"><span data-pinwheel class="eyebrow__mark"></span> Da Garrafeira à Mesa</span>
+          <h2 class="section__title">Para Acompanhar</h2>
+          <p class="section__intro">Porque petisco pede copo. Escolha sem cerimónia.</p>
+
+          <dl class="drinks">
+            <div class="drink">
+              <dt>Vinho a Copo</dt>
+              <dd class="drink__desc">Tinto, branco ou verde — seleção regional que muda ao sabor da época.</dd>
+              <dd class="drink__price">3,50&nbsp;€</dd>
+            </div>
+            <div class="drink">
+              <dt>Cerveja Artesanal</dt>
+              <dd class="drink__desc">Rotativa, de produtores portugueses. Pergunte a de hoje.</dd>
+              <dd class="drink__price">4,00&nbsp;€</dd>
+            </div>
+            <div class="drink">
+              <dt>Sangria da Casa</dt>
+              <dd class="drink__desc">Tinta ou branca, com fruta da época. Servida em jarro, para partilhar.</dd>
+              <dd class="drink__price">12,00&nbsp;€ <span class="drink__unit">/ jarro</span></dd>
+            </div>
+            <div class="drink">
+              <dt>Ginjinha</dt>
+              <dd class="drink__desc">Com ou sem elas. O ponto final doce de qualquer petiscada.</dd>
+              <dd class="drink__price">2,50&nbsp;€</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= AMBIENTE (mosaico) ======================= -->
+    <section class="section ambiente" id="ambiente">
+      <div class="section__head reveal">
+        <span class="eyebrow"><span data-pinwheel class="eyebrow__mark"></span> A Casa</span>
+        <h2 class="section__title">O Ambiente</h2>
+        <p class="section__intro">Madeira quente, luz baixa e o burburinho certo. Venha ver.</p>
+      </div>
+
+      <div class="mosaic reveal">
+        <!-- Foto: balcão/bar com lâmpadas suspensas — Unsplash -->
+        <figure class="mosaic__item mosaic__item--tall">
+          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=900"
+               alt="Balcão de bar com lâmpadas suspensas e garrafas ao fundo" loading="lazy" />
+        </figure>
+        <!-- Foto: interior acolhedor em tons quentes — Unsplash -->
+        <figure class="mosaic__item">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800"
+               alt="Sala de refeições acolhedora em tons quentes de madeira" loading="lazy" />
+        </figure>
+        <!-- Foto: sala junto à janela com luz natural — Unsplash -->
+        <figure class="mosaic__item">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&q=80&w=800"
+               alt="Mesas junto a uma grande janela com luz natural" loading="lazy" />
+        </figure>
+        <!-- Foto: esplanada / mesa ao ar livre — Unsplash -->
+        <figure class="mosaic__item mosaic__item--wide">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1100"
+               alt="Esplanada com mesas postas ao final do dia" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================= TESTEMUNHOS ======================= -->
+    <section class="section testemunhos" id="testemunhos">
+      <div class="testemunhos__mark reveal"><span data-pinwheel></span></div>
+      <div class="testemunhos__grid">
+        <blockquote class="quote reveal">
+          <p>“Entrámos para um copo e saímos três horas depois. As moelas e a tábua
+             desapareceram — voltamos já para a semana.”</p>
+          <cite>— Marta &amp; Rui, Lisboa</cite>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>“Sabe a casa de avó com alma nova. O pica-pau é perigoso: não se consegue parar.”</p>
+          <cite>— Tiago F.</cite>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>“O sítio certo para levar quem não é de cá e dizer: ‘isto é que é petiscar’.”</p>
+          <cite>— Inês C.</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ======================= RESERVAS ======================= -->
+    <section class="section reservas" id="reservas">
+      <div class="reservas__grid">
+
+        <div class="reservas__info reveal">
+          <span class="eyebrow"><span data-pinwheel class="eyebrow__mark"></span> Visite-nos</span>
+          <h2 class="section__title">Reserve a sua mesa</h2>
+          <p class="section__intro">
+            Reservamos com gosto — sobretudo ao fim de semana. Diga-nos quando e quantos são.
+          </p>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-list__label">Morada</span>
+              <span>Rua dos Cataventos, 27<br />1200-000 Lisboa</span>
+            </li>
+            <li>
+              <span class="info-list__label">Horário</span>
+              <span>Ter–Dom · 12h–15h &amp; 19h–24h<br />Segunda encerrado</span>
+            </li>
+            <li>
+              <span class="info-list__label">Contacto</span>
+              <span><a href="tel:+351210000000">+351 210 000 000</a><br /><a href="mailto:ola@cataventos.pt">ola@cataventos.pt</a></span>
+            </li>
+          </ul>
+
+          <!-- Mapa embed (placeholder). SUBSTITUIR o src pelo embed real do Google Maps. -->
+          <div class="reservas__map" role="img" aria-label="Mapa — substituir pelo embed real do Google Maps">
+            <span data-pinwheel></span>
+            <p>Mapa — <em>SUBSTITUIR pelo embed do Google Maps</em></p>
+          </div>
+        </div>
+
+        <form class="reservas__form reveal" id="reservaForm" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="O seu nome" required />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="data">Data</label>
+              <input type="date" id="data" name="data" required />
+            </div>
+            <div class="field">
+              <label for="hora">Hora</label>
+              <input type="time" id="hora" name="hora" required />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="pessoas">Nº de pessoas</label>
+              <input type="number" id="pessoas" name="pessoas" min="1" max="30" value="2" required />
+            </div>
+            <div class="field">
+              <label for="contacto">Contacto</label>
+              <input type="tel" id="contacto" name="contacto" autocomplete="tel" placeholder="Telefone ou email" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notas">Notas <span class="field__opt">(opcional)</span></label>
+            <textarea id="notas" name="notas" rows="3" placeholder="Alergias, ocasião especial, cadeira de bebé…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--solid btn--block">Pedir Reserva</button>
+          <p class="form__note" id="formNote" role="status" aria-live="polite">
+            Ao enviar, entramos em contacto para confirmar. <br class="only-wide" />
+            <span class="form__hint">(Demonstração — o formulário ainda não envia dados.)</span>
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__mark" data-pinwheel></span>
+        <div>
+          <span class="brand__name">Cataventos</span>
+          <span class="brand__sub">Petiscos &amp; Companhia</span>
+        </div>
+      </div>
+
+      <nav class="footer__links" aria-label="Rodapé">
+        <a href="#petiscos">Petiscos</a>
+        <a href="#bebidas">Para Acompanhar</a>
+        <a href="#ambiente">Ambiente</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+
+      <div class="footer__contact">
+        <p>Rua dos Cataventos, 27 · 1200-000 Lisboa</p>
+        <p><a href="tel:+351210000000">+351 210 000 000</a> · <a href="mailto:ola@cataventos.pt">ola@cataventos.pt</a></p>
+        <div class="footer__social" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <p>© <span id="year"></span> Cataventos — Petiscos &amp; Companhia. Feito ao sabor do vento.</p>
+      <p class="footer__credit">Fotografias: Unsplash (livres de direitos).</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

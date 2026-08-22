@@ -240,7 +240,7 @@ p { margin: 0 0 1rem; }
 
 .conceito__media { position: relative; }
 .conceito__media img {
-  width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  width: 100%; aspect-ratio: 16 / 11; object-fit: cover;
   border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
 }
 .conceito__badge {

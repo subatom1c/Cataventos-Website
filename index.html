@@ -425,10 +425,17 @@
             </li>
           </ul>
 
-          <!-- Mapa embed (placeholder). SUBSTITUIR o src pelo embed real do Google Maps. -->
-          <div class="reservas__map" role="img" aria-label="Mapa — substituir pelo embed real do Google Maps">
-            <span data-pinwheel></span>
-            <p>Mapa — <em>SUBSTITUIR pelo embed do Google Maps</em></p>
+          <!-- Mapa Google Maps embed.
+               O mapa está centrado em Lisboa (a morada é placeholder).
+               SUBSTITUIR: troca o texto após "q=" pela morada real, ex.:
+               q=Rua+dos+Cataventos+27,+Lisboa  — mantém "&output=embed". -->
+          <div class="reservas__map">
+            <iframe
+              title="Localização do Cataventos no mapa"
+              src="https://maps.google.com/maps?q=Lisboa,+Portugal&z=14&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
           </div>
         </div>
 

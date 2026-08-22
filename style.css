@@ -388,15 +388,11 @@ p { margin: 0 0 1rem; }
 .info-list a:hover { color: var(--terracotta); }
 
 .reservas__map {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
-  aspect-ratio: 16 / 8; border-radius: var(--radius); border: 1.5px dashed var(--line);
-  background:
-    repeating-linear-gradient(45deg, rgba(124,138,78,.06) 0 16px, transparent 16px 32px),
-    var(--cream-2);
-  color: var(--brown-soft); text-align: center;
+  aspect-ratio: 16 / 8; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  background: var(--cream-2);
 }
-.reservas__map span[data-pinwheel] { width: 40px; height: 40px; opacity: .85; }
-.reservas__map p { margin: 0; font-size: .85rem; }
+.reservas__map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* Formulário */
 .reservas__form {
